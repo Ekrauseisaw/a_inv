@@ -40,4 +40,3 @@ class Alien(Sprite):
 
         elif self.rect.left <= 0:
             return True
-
