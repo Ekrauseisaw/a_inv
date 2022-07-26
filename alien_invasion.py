@@ -6,7 +6,6 @@ from pygame.sprite import Group
 from alien import Alien
 from star import Star
 from game_stats import GameStats
-from button import Button
 
 
 def run_game():
@@ -41,9 +40,6 @@ def run_game():
     # Создание звездного неба
     gf.create_stars_sky(ai_settings, screen, stars)
 
-    # Создание кнопки play
-    #play_button = Button(ai_settings, screen, "Play")
-
     # Запуск основного цикла игры.
     while True:
         # Вызываем модуль с функциями
@@ -52,7 +48,7 @@ def run_game():
             ship.update()
             gf.update_bullets(ai_settings, screen, ship, aliens, bullets)
             gf.update_aliens(ai_settings, stats, screen, ship, aliens, bullets)
-            gf.update_screen(ai_settings, screen, stats, ship, aliens, stars, bullets)
+            gf.update_screen(ai_settings, screen, ship, aliens, stars, bullets)
 
 
 run_game()
